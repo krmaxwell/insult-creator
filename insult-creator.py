@@ -1,3 +1,4 @@
+import argparse
 import random
 
 columnA = ['lazy', 'stupid', 'insecure', 'idiotic', 'slimy', 'slutty', 'smelly', 'pompous',
@@ -9,4 +10,10 @@ columnC = ['pilot', 'canoe', 'captain', 'pirate', 'hammer', 'knob', 'box', 'jock
            'waffle', 'goblin', 'blossom', 'biscuit', 'clown', 'socket', 'monster', 'hound', 
            'dragon']
 
-print random.choice(columnA) + ' ' + random.choice(columnB) + ' ' + random.choice(columnC)
+parser = argparse.ArgumentParser(description='Create random insults')
+parser.add_argument('runs', metavar='N', type=int, default=1, nargs='?', 
+                    help='Number of insults to create')
+args = parser.parse_args()
+
+for i in range(0, args.runs):
+    print random.choice(columnA) + ' ' + random.choice(columnB) + ' ' + random.choice(columnC)
