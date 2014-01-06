@@ -1,0 +1,4 @@
+insult-creator
+==============
+
+Insult creator
